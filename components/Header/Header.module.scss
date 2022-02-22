@@ -1,0 +1,150 @@
+.header {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  z-index: 1000;
+  font-family: "Product sans", sans-serif;
+
+  .headerContainer {
+    height: 50px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    top: 0;
+
+    &.nav__transluscent {
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(30px);
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .headerLeft {
+      flex: 1;
+      margin-left: 3%;
+      margin-right: 7%;
+    }
+    .menuIcon {
+      img {
+        width: 25px;
+      }
+    }
+
+    .headerCenter {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .headerRight {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10%;
+
+      p {
+        color: white;
+        cursor: pointer;
+      }
+    }
+    .headerIcons {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .sideBar {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(30px);
+    height: 100vh;
+    width: 15%;
+    color: white;
+    top: 0;
+    left: -100%;
+    transition: all 0.4s ease-in;
+
+    &.active {
+      left: 0%;
+    }
+
+    .closeIcon {
+      position: absolute;
+      padding: 15px;
+      left: 10%;
+      top: 1%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    .headerContainer {
+      .headerIcons {
+        width: 60%;
+      }
+    }
+    .sideBar {
+      width: 25%;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    .headerContainer {
+      .headerIcons {
+        width: 80%;
+      }
+    }
+    .sideBar {
+      width: 30%;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .header {
+    .headerContainer {
+      .headerLeft {
+        flex: 0.5;
+      }
+      .headerCenter {
+        flex: 0.5;
+        justify-content: flex-start;
+        // border: 1px solid red;
+      }
+
+      .headerRight {
+        flex: 4;
+        padding-right: 2.5%;
+      }
+      .headerIcons {
+        width: 55%;
+      }
+    }
+
+    .sideBar {
+      width: 50%;
+    }
+  }
+}
+@media screen and (max-width: 300px) {
+  .header {
+    .headerContainer {
+      .headerIcons {
+        width: 65%;
+
+        img {
+          width: 13px;
+        }
+      }
+      .menuIcon {
+        img {
+          width: 20px;
+        }
+      }
+    }
+    .sideBar {
+      width: 60%;
+    }
+  }
+}
